@@ -7,7 +7,14 @@ var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 mongoose.connect('mongodb://localhost/mern-crud', { useMongoClient: true, promiseLibrary: require('bluebird') })
   .then(() =>  console.log('connection succesful'))
-  .catch((err) => console.error(err));
+  .catch((err) => { 
+    console.log(
+      '  * Insure MongDB server is up: \'mongod.exe --dbpath .\mongodb\data\' \n' +
+      '  * Then can do a \'npm run buld\' and later \'npm start\' \n' +
+      '  * Afterwards, use browser on \'http://localhost:3000\' or \'http://localhost:3000/book\' \n'
+    );
+    console.error(err);
+  });
 
 var book = require('./routes/book');
 var app = express();
