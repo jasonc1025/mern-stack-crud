@@ -1,0 +1,11 @@
+# [jwc]+x For MondoDB Usage 
+# .gitignore to keep just .txt files
+
+# filter everything out ...
+*
+
+# ... except the .gitignore ...
+!.gitignore
+
+# ... and except all text files.
+!*.txt
